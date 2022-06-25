@@ -20,34 +20,47 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>New York</h1>
-        <ul>
-          <li>Friday 6:00</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="sun"
-            />
-            12℃|℉
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overwiew">
+            <h1>New York</h1>
             <ul>
-              <li>Precipation: 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2km/h</li>
+              <li>Friday 6:00</li>
+              <li>Clear</li>
             </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                    alt="Clear"
+                    class="float-start"
+                  />
+
+                  <div class="float-start">
+                    <strong>21</strong> <span class="units">℃ | ℉</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Precipation: 0%</li>
+                  <li>Humidity: 73%</li>
+                  <li>Wind: 2km/h</li>
+                </ul>
+              </div>
+            </div>
+            <small>
+              <a
+                href="https://github.com/KarolinaTya/Weather-app2"
+                target="_blank"
+              >
+                Open-source code</a
+              >
+              by Karolina Łaniewska
+            </small>
           </div>
         </div>
-        <small>
-          <a href="https://github.com/KarolinaTya/Weather-app2" target="_blank">
-            Open-source code</a
-          >
-          by Karolina Łaniewska
-        </small>
       </div>
     </div>
     <script src="src/app.js"></script>

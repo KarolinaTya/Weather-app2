@@ -20,6 +20,25 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+
+  <div class="row">
+    <div class="col-2">
+      <div class="weather-forecast-date">Thu</div>
+      <img
+        src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+        alt=""
+        width="42"
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max">18 </span>
+        <span class="weather-forecast-temperature-min">12</span>
+      </div>
+    </div>
+  </div>`;
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -27,6 +46,7 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -41,3 +61,5 @@ function displayTemperature(response) {
 let apiKey = "01619371674201e91b5c825d8719047b";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
+
+search("New York");
